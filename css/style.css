@@ -359,7 +359,7 @@ body {
     font-size: 2rem;
 }
 
-nav, h2 {
+.navbar-top, h2 {
   width: 95%;
   margin: 0 auto;
 }
@@ -519,14 +519,18 @@ h1 {
 
 /* ======= About Me Styling ======= */
 
-.about-me p {
+.about-me p, footer p {
   padding: 20px;
   letter-spacing: initial;
 }
 
 /* ======= Footer Styling ======= */
 
-footer {
-
+.bottom-nav {
+  font-size: 4rem;
+  min-width: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
