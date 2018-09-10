@@ -459,6 +459,7 @@ h1 {
 }
 
 .project {
+  position: relative;
   margin: 0;
   background-position: center;
   background-size: cover;
@@ -498,7 +499,22 @@ h1 {
 }
 
 .hidden-project-info {
+  width: 90%;
+  margin: 0 auto;
   display: none;
+}
+
+.project:hover .hidden-project-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+  padding-bottom: 40px;
 }
 
 /* ======= About Me Styling ======= */
