@@ -366,6 +366,8 @@ body {
 
 h2 {
   text-transform: uppercase;
+  text-align: center;
+  font-size: 5rem;
 }
 
 ul {
@@ -413,6 +415,11 @@ nav {
   height: 30px;
 }
 
+.top-nav li a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .intro {
   width: 80%;
   margin: 0 90% 0 10%;
@@ -422,6 +429,8 @@ nav {
 }
 
 h1 {
+  max-width: 606px;
+  min-height: 260px;
   background-size: 200%;
   background-image: linear-gradient(
     45deg,#fff070 0%,#fff070 35%,#00c9d3 66%,#00c9d3 100%);
@@ -447,8 +456,8 @@ h1 {
 }
 
 /* ======= Portfolio Section Styling ======= */
-.heading {
-  height: 100px;
+.headings {
+  height: 300px;
   display: flex;
   align-items: center;
 }
@@ -525,7 +534,10 @@ h1 {
 }
 
 /* ======= Footer Styling ======= */
-
+footer {
+  background-color: #000021;
+  color: #fff;
+}
 .bottom-nav {
   font-size: 4rem;
   min-width: 500px;
