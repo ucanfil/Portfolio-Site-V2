@@ -359,8 +359,14 @@ body {
 }
 
 .navbar-top, h2 {
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
+}
+
+.navbar-top {
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
 }
 
 h2 {
@@ -405,7 +411,8 @@ nav {
 
 .top-nav {
   text-transform: uppercase;
-  min-width: 500px;
+  max-width: 500px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -478,11 +485,12 @@ h1 {
 
 .heading-detail {
   position: absolute;
-  top: 20%;
+  top: 25%;
   font-family: 'Shadows Into Light', cursive;
   color: #d6d6d6;
   font-size: 9rem;
   z-index: 1;
+  text-align: center;
 }
 
 .heading-detail-contact {
@@ -558,6 +566,7 @@ h1 {
 .about-me p, footer p {
   padding: 20px;
   letter-spacing: initial;
+  text-align: justify;
 }
 
 /* ======= Footer Styling ======= */
@@ -565,11 +574,59 @@ footer {
   background-color: #000021;
   color: #fff;
 }
+
+.navbar-bottom {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .bottom-nav {
   font-size: 4rem;
-  min-width: 500px;
+  width: 500px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  max-width: 500px;
+  width: 100%;
 }
 
+@media  only screen and (max-width: 900px) {
+  .navbar-top {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-bottom {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  html {
+    font-size: 40%;
+  }
+
+  .heading-detail {
+    top: 32.5%;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  html {
+    font-size: 35%;
+  }
+
+  .heading-detail {
+    top: 32.5%;
+  }
+}
