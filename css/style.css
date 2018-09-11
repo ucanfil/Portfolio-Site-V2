@@ -345,17 +345,17 @@
 }
 
 html {
-    font-size: 62.5%;
-    font-family: 'Lato', sans-serif;
+  font-size: 62.5%;
+  font-family: 'Lato', sans-serif;
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    letter-spacing: 2px;
-    font-size: 2rem;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 2px;
+  font-size: 2rem;
 }
 
 .navbar-top, h2 {
@@ -394,7 +394,7 @@ header {
   color: white;
   position: relative;
   font-size: 2rem;
-  padding: 20px;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
