@@ -511,6 +511,7 @@ color: #fff;
 background: transparent;
 border: none;
 outline: none;
+text-align: center;
 }
 
 /* ======= Portfolio Section Styling ======= */
@@ -535,6 +536,8 @@ display: flex;
 .heading-detail {
 position: absolute;
 top: 25%;
+left: 0;
+right: 0;
 font-family: 'Shadows Into Light', cursive;
 color: #d6d6d6;
 font-size: 9rem;
@@ -605,6 +608,7 @@ color: #fff;
 
 .hidden-project-info p {
 height: 125px;
+width: 100%;
 overflow-y: auto;
 }
 
@@ -637,13 +641,14 @@ text-align: justify;
 letter-spacing: initial;
 }
 
-.code-nav-buttons button {
+.code-nav-buttons a {
 background: transparent;
+border: 1px solid #fff;
 padding: 2px 10px;
 color: #fff;
 }
 
-.code-nav-buttons button:hover {
+.code-nav-buttons a:hover {
 color: #00c9d3;
 border-color: #00c9d3;
 -webkit-transition: all 0.5s ease;
