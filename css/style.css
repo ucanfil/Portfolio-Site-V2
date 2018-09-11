@@ -342,7 +342,6 @@
 /* ======= Main Styles For the Webpage ====== */
 * {
     box-sizing: border-box;
-    border: .3px solid red;
 }
 
 html {
@@ -368,6 +367,7 @@ h2 {
   text-transform: uppercase;
   text-align: center;
   font-size: 5rem;
+  z-index: 2;
 }
 
 ul {
@@ -415,9 +415,19 @@ nav {
   height: 30px;
 }
 
-.top-nav li a {
+a {
   text-decoration: none;
   color: inherit;
+  padding: 3px 5px;
+}
+
+.top-nav a:hover, .navbar-bottom a:hover {
+  color: #01fa69;
+  transition: color 0.5s;
+}
+
+.top-nav a:hover {
+  border: 1px solid #01fa69;
 }
 
 .intro {
@@ -437,7 +447,6 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: glow 9s linear infinite;
-  -webkit-animation: glow 9s linear infinite;
 }
 
 @keyframes glow {
@@ -453,13 +462,31 @@ h1 {
   font-size: 5rem;
   color: #fff;
   background: transparent;
+  border: none;
+  outline: none;
 }
 
 /* ======= Portfolio Section Styling ======= */
 .headings {
   height: 300px;
+  position: relative;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+}
+
+.heading-detail {
+  position: absolute;
+  top: 20%;
+  font-family: 'Shadows Into Light', cursive;
+  color: #d6d6d6;
+  font-size: 9rem;
+  z-index: 1;
+}
+
+.heading-detail-contact {
+  color: #2e2e63;
 }
 
 .projects {
