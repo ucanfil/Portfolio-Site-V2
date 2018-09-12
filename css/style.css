@@ -270,27 +270,27 @@ html[data-useragent*='MSIE 10.0'] h1 {
 }
 
 .project1 {
-  background-image: url("/img/todo-medium_600.png");
+  background-image: url("../img/todo-medium_600.png");
 }
 
 .project2 {
-  background-image: url("/img/portfolio-medium_600.png");
+  background-image: url("../img/portfolio-medium_600.png");
 }
 
 .project3 {
-  background-image: url("/img/colorgame-medium_600.png");
+  background-image: url("../img/colorgame-medium_600.png");
 }
 
 .project4 {
-  background-image: url("/img/catclicker-medium_600.png");
+  background-image: url("../img/catclicker-medium_600.png");
 }
 
 .project5 {
-  background-image: url("/img/matchinggame-medium_600.png");
+  background-image: url("../img/matchinggame-medium_600.png");
 }
 
 .project6 {
-  background-image: url("/img/froggergame-medium_600.png");
+  background-image: url("../img/froggergame-medium_600.png");
 }
 
 .hidden-project-info {
