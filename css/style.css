@@ -479,6 +479,7 @@ a {
 }
 
 h1 {
+  font-family: 'Playfair Display', serif;
   max-width: 606px;
   min-height: 260px;
   background-size: 200%;
