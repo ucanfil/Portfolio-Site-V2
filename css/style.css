@@ -511,6 +511,8 @@ h1 {
 
 html[data-useragent*='MSIE 10.0'] h1 {
   color: #00c9d3;
+  background-image: none;
+  animation: none;
 }
 
 @-webkit-keyframes glow {
