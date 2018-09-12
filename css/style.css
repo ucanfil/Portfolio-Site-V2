@@ -81,7 +81,7 @@ nav {
   justify-content: space-between;
 }
 
-[alt="business-logo"] {
+.logo {
   height: 50px;
 }
 
