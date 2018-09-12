@@ -564,6 +564,7 @@ h1 {
   outline: none;
   text-align: center;
   width: 100%;
+  margin: 0 auto;
 }
 
 /* ======= Portfolio Section Styling ======= */
