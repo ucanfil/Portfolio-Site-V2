@@ -467,6 +467,7 @@ a {
 
 .intro {
   width: 80%;
+  height: 55vh;
   margin: 0 90% 0 10%;
   font-size: 3.75rem;
   letter-spacing: 2px;
@@ -475,34 +476,6 @@ a {
 
 .hidden {
   display: none;
-}
-
-.knockout {
-  font-size: 3.75rem;
-  max-width: 606px;
-  min-height: 260px;
-  height: 100vh;
-  background-image: -webkit-linear-gradient(
-    45deg,
-    #fff070 0%,
-    #fff070 35%,
-    #00c9d3 66%,
-    #00c9d3 100%
-  );
-  background-image: -o-linear-gradient(
-    45deg,
-    #fff070 0%,
-    #fff070 35%,
-    #00c9d3 66%,
-    #00c9d3 100%
-  );
-  background-image: linear-gradient(
-    45deg,
-    #fff070 0%,
-    #fff070 35%,
-    #00c9d3 66%,
-    #00c9d3 100%
-  );
 }
 
 h1 {
@@ -536,6 +509,10 @@ h1 {
   animation: glow 9s linear infinite;
 }
 
+html[data-useragent*='MSIE 10.0'] h1 {
+  color: #00c9d3;
+}
+
 @-webkit-keyframes glow {
   0%,
   100% {
@@ -557,13 +534,17 @@ h1 {
 }
 
 .scroll-down-button {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  left: 50%;
   font-size: 5rem;
   color: #fff;
   background: transparent;
   border: none;
   outline: none;
   text-align: center;
-  width: 100%;
+  width: 50px;
   margin: 0 auto;
 }
 

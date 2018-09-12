@@ -1,3 +1,5 @@
+const doc = document.documentElement;
+doc.setAttribute('data-useragent', navigator.userAgent);
 //======= Smooth Scroolling =======//
 // Src="https://stackoverflow.com/a/7717572"
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
