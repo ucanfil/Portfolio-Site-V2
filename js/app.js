@@ -1,5 +1,5 @@
 //======= H1 Style Solution for IE10 =======//
-const doc = document.documentElement;
+var doc = document.documentElement;
 doc.setAttribute('data-useragent', navigator.userAgent);
 
 //======= Smooth Scroolling =======//
