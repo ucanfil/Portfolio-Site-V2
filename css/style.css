@@ -108,6 +108,7 @@ a {
   text-decoration: none;
   color: inherit;
   padding: 3px 5px;
+  border: 1px solid transparent;
 }
 
 .top-nav a:hover,
