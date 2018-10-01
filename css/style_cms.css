@@ -2,6 +2,7 @@
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  /* border: 1px solid red; */
 }
 
 html {
@@ -18,7 +19,6 @@ body {
   font-size: 2rem;
   background-color: #000021;
   color: #fff;
-  text-transform: uppercase;
 }
 
 .container {
@@ -27,6 +27,10 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.admin-page {
+  text-transform: uppercase;
 }
 
 ul {
@@ -83,4 +87,58 @@ a:hover {
   background-color: brown;
 }
 
-/* ======= Header Styling ======= */
+/* ======= Add/Edit Page Styling ======= */
+.add-page,
+.edit-page {
+  width: 750px;
+}
+
+.project-content-list {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  width: 100%;
+}
+
+.project-content-list li {
+  display: flex;
+}
+
+.project-content-list li label {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 200px;
+}
+
+.project-content-list li input,
+.project-content-list li textarea {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 200px;
+}
+
+.project-content-list li textarea {
+  height: 150px;
+}
+
+.submit-button {
+  float: right;
+  margin-top: 20px;
+}
+
+/* ======= Edit Page Styling ======= */
+.edit-page {
+  justify-content: flex-start;
+}
+
+.project-selection {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.select-button {
+  background-color: #7fffd486;
+}
+
