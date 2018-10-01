@@ -1,10 +1,15 @@
 <?php
 
-// require('./dbconnection.php');
+require('./dbconnection.php');
 
-
+// Populating Dropdown
+$sqlRet = 'SELECT `id`, `p_title` FROM `projects`';
+$stmtRet = $db->query($sqlRet);
+$stmtRet->execute();
+$projects = $stmtRet->fetchAll();
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +17,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin</title>
+    <title>Select Project</title>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/style_cms.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -21,15 +26,17 @@
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 </head>
 <body>
-    <main class="container admin-page">
-        <ul>
-            <li class="project-nav add"><a href="add.php">Add Project</a></li>
-            <li class="project-nav edit"><a href="select.php">Edit Project</a></li>
-            <li class="project-nav delete"><a href="select.php">Delete Project</a></li>
-        </ul>
-        <div class="about-me-container">
-            <a class="edit-about-me" href="editAboutMe.php">Edit About Me</a>
-        </div>
+    <main class="container select-page">
+        <form class="project-selection" action="edit.php" method="GET">
+            <label for="dropdown">Choose Project to Edit: </label>
+            <select name="dropdown" id="id">
+                <option value="0">PROJECTS</option>
+                <?php
+                foreach($projects as $project) { ?>
+                    <option value="<?php echo $project['id'] ?>"><?php echo $project['p_title'] ?></option>
+                <?php } ?>
+            </select>
+            <input class="select-button" type="submit" value="Select">
+        </form>
     </main>
 </body>
-</html>
