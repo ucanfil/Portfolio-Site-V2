@@ -1,0 +1,86 @@
+/* ======= Admin Page Styles For the CMS Section ====== */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  background-color: #000021;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.container {
+  margin: 20% auto;
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.project-nav {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  padding: 3px 5px;
+  border: 1px solid transparent;
+  text-align: center;
+}
+
+a:hover {
+  color: #000021;
+  transition: color 0.5s;
+}
+
+.about-me-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 450px;
+  background-color: #838383;
+}
+
+.edit-about-me {
+  line-height: 100%;
+}
+
+.add {
+  background-color: aquamarine;
+}
+
+.edit {
+  background-color: aqua;
+}
+
+.delete {
+  background-color: brown;
+}
+
+/* ======= Header Styling ======= */
