@@ -16,8 +16,6 @@ if (isset($_POST['p_title'], $_POST['p_content'], $_POST['code_url'], $_POST['de
         $sqlEdit = 'INSERT INTO `projects` (`p_title`, `p_content`, `code_url`, `see_url`, `bg_image_url`)
                     VALUES (:p_title, :p_content, :code_url, :see_url, :bg_image_url)';
         $stmtEdit = $db->prepare($sqlEdit);
-        
-        var_dump($p_title, $p_content, $code_url, $see_url, $bg_image_url);
         $stmtEdit->bindParam(':p_title', $p_title);
         $stmtEdit->bindParam(':p_content', $p_content);
         $stmtEdit->bindParam(':code_url', $code_url);
@@ -30,7 +28,6 @@ if (isset($_POST['p_title'], $_POST['p_content'], $_POST['code_url'], $_POST['de
         } else {
             echo 'Something went wrong !';
         }
-        
     }
 }
 
