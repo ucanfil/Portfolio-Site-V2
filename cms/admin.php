@@ -2,8 +2,6 @@
 
 // require('./dbconnection.php');
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -22,10 +20,11 @@
 </head>
 <body>
     <main class="container admin-page">
+        <h3><?php echo $message; ?></h3>
         <ul>
             <li class="project-nav add"><a href="add.php">Add Project</a></li>
             <li class="project-nav edit"><a href="select.php">Edit Project</a></li>
-            <li class="project-nav delete"><a href="select.php">Delete Project</a></li>
+            <li class="project-nav delete"><a href="delete.php">Delete Project</a></li>
         </ul>
         <div class="about-me-container">
             <a class="edit-about-me" href="editAboutMe.php">Edit About Me</a>

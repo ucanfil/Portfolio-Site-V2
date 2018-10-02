@@ -2,56 +2,16 @@
 
 require('./dbconnection.php');
 
-// If any option selected gets its id from the list and assign it to $id
-$id = $_GET['dropdown'];
-
-if ($id != 0) {
-    $sqlRetProject = 'SELECT * FROM `projects` WHERE `id`=' . $id;
-    $stmtRetProject = $db->query($sqlRetProject);
-    $stmtRetProject->execute();
-    $project = $stmtRetProject->fetch();
-} else {
-    header('Location: ./select.php');
-    exit();
-}
-
-// Check if user edited the project
-if (isset($_POST['p_title'], $_POST['p_content'], $_POST['code_url'], $_POST['deployed_url'], $_POST['image_url'])) {
-    $p_title = $_POST['p_title'];
-    $p_content = $_POST['p_content'];
-    $code_url = $_POST['code_url'];
-    $deployed_url = $_POST['deployed_url'];
-    $image_url = $_POST['image_url'];
-
-    // var_dump($id, $p_title, $p_content, $code_url, $see_url, $bg_image_url);
-    echo '<br>';
-    if (empty($_POST['p_title']) && empty($_POST['p_content']) && empty($_POST['code_url'])
-    && empty($_POST['deployed_url']) && empty($_POST['image_url'])) {
-        $error = 'All fields must be filled out !';
-    } else {
-        // Editing the database
-        $sqlEdit = 'REPLACE INTO `projects` VALUES(:id, :p_title, :p_content, :code_url, :see_url, :bg_image_url)';
-        $stmtEdit = $db->prepare($sqlEdit);
-
-        // var_dump($id, $p_title, $p_content, $code_url, $see_url, $bg_image_url);
-
-        $stmtEdit->bindParam(':id', $id);
-        $stmtEdit->bindParam(':p_title', $p_title);
-        $stmtEdit->bindParam(':p_content', $p_content);
-        $stmtEdit->bindParam(':code_url', $code_url);
-        $stmtEdit->bindParam(':see_url', $see_url);
-        $stmtEdit->bindParam(':bg_image_url', $bg_image_url);
-        if ($stmtEdit->execute()) {
-            echo 'Success';
-        } else {
-            echo 'Failed';
-        }
+    if (isset($_GET['dropdown'])) {
+        // If any option selected get its id from the list and assign it to $id
+        $id = $_GET['dropdown'];
+        $sqlRetProject = 'SELECT * FROM `projects` WHERE `id`= :id';
+        $stmtRetProject = $db->prepare($sqlRetProject);
+        $stmtRetProject->bindParam(':id', $id);
+        $stmtRetProject->execute();
+        $project = $stmtRetProject->fetch();
     }
-}
-echo $project['p_title'];
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,27 +29,30 @@ echo $project['p_title'];
 </head>
 <body>
     <main class="container edit-page">
-        <form action="edit.php" method="POST">
+        <form action="editSubmit.php" method="POST">
             <ul class="project-content-list">
                 <li>
+                    <input type="hidden" name="hidden" value="<?php echo $id; ?>">
+                </li>
+                <li>
                     <label for="p_title">Project Title: </label>
-                    <input type="text" name="p_title" placeholder="<?php echo $project['p_title']; ?>">
+                    <input type="text" name="p_title" value="<?php echo $project['p_title']; ?>">
                 </li>
                 <li>
                     <label for="p_content">Project Content: </label>
-                    <textarea type="text" name="p_content" placeholder="<?php echo $project['p_content']; ?>"></textarea>
+                    <textarea type="text" name="p_content"><?php echo $project['p_content']; ?></textarea>
                 </li>
                 <li>
                     <label for="code_url">Source Code Url: </label>
-                    <input type="text" name="code_url" placeholder="<?php echo $project['code_url']; ?>">
+                    <input type="text" name="code_url" value="<?php echo $project['code_url']; ?>">
                 </li>
                 <li>
                     <label for="deployed_url">Deployed Url: </label>
-                    <input type="text" name="deployed_url" placeholder="<?php echo $project['deployed_url']; ?>">
+                    <input type="text" name="deployed_url" value="<?php echo $project['see_url']; ?>">
                 </li>
                 <li>
                     <label for="image_url">Image Url: </label>
-                    <input type="text" name="image_url" placeholder="<?php echo $project['image_url']; ?>">
+                    <input type="text" name="image_url" value="<?php echo $project['bg_image_url']; ?>">
                 </li>
             </ul>
             <input class="submit-button" type="submit" value="Edit">

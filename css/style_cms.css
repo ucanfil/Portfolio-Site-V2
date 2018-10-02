@@ -84,7 +84,7 @@ a:hover {
 }
 
 .delete {
-  background-color: brown;
+  background-color: #9c1e1e;
 }
 
 /* ======= Add/Edit Page Styling ======= */
@@ -128,17 +128,32 @@ form {
   margin-top: 20px;
 }
 
+/* ======= Select Page Styling ======= */
+.project-selection {
+  width: 100%;
+  height: 100px;
+}
+
+.project-selection select {
+  float: right;
+}
+
+.select-button {
+  background-color: #7fffd486;
+  margin-top: 20px;
+  float: right;
+}
+
 /* ======= Edit Page Styling ======= */
 .edit-page {
   justify-content: flex-start;
 }
 
-.project-selection {
-  width: 100%;
-  margin-bottom: 20px;
+/* ======= Delete Page Styling ======= */
+.delete-button {
+  background-color: #9c1e1e;
+  margin-top: 20px;
+  float: right;
 }
 
-.select-button {
-  background-color: #7fffd486;
-}
 
