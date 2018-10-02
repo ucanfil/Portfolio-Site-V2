@@ -55,6 +55,7 @@ a {
   padding: 3px 5px;
   border: 1px solid transparent;
   text-align: center;
+  text-shadow: 1px 1px 1px #000021;
 }
 
 a:hover {
@@ -142,6 +143,8 @@ form {
   background-color: #7fffd486;
   margin-top: 20px;
   float: right;
+  border: none;
+  padding: 5px 10px;
 }
 
 /* ======= Edit Page Styling ======= */
@@ -152,8 +155,26 @@ form {
 /* ======= Delete Page Styling ======= */
 .delete-button {
   background-color: #9c1e1e;
+  color: #fff;
   margin-top: 20px;
   float: right;
+  border: none;
+  padding: 5px 10px;
 }
+
+/* ======= Error/Success Messages ======= */
+.error {
+  color: #9c1e1e;
+}
+
+.success {
+  color: #208f45;
+  text-transform: lowercase;
+}
+
+.success::first-letter {
+  text-transform: uppercase;
+}
+
 
 

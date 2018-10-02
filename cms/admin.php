@@ -1,5 +1,9 @@
 <?php
 
+if ($_GET['success'] == '01') {
+    $success = 'Process successful.';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +22,7 @@
 </head>
 <body>
     <main class="container admin-page">
-        <h3><?php echo $message; ?></h3>
+        <h3 class="success"><?php echo $success; ?></h3>
         <ul>
             <li class="project-nav add"><a href="add.php">Add Project</a></li>
             <li class="project-nav edit"><a href="select.php">Edit Project</a></li>

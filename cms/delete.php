@@ -1,12 +1,7 @@
 <?php
 
 require('./dbconnection.php');
-
-// Populating Dropdown
-$sqlRet = 'SELECT `id`, `p_title` FROM `projects`';
-$stmtRet = $db->query($sqlRet);
-$stmtRet->execute();
-$projects = $stmtRet->fetchAll();
+require('./functions.php');
 
 ?>
 
@@ -30,9 +25,9 @@ $projects = $stmtRet->fetchAll();
         <form class="project-selection" action="deleteSubmit.php" method="GET">
             <label for="dropdown">Choose Project to Edit: </label>
             <select name="dropdown" id="id">
-                <option value="0">PROJECTS</option>
+                <option selected>PROJECTS</option>
                 <?php
-                foreach($projects as $project) { ?>
+                foreach(fetchProjects($db) as $project) { ?>
                     <option value="<?php echo $project['id'] ?>"><?php echo $project['p_title'] ?></option>
                 <?php } ?>
             </select>

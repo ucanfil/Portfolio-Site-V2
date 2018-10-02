@@ -1,12 +1,11 @@
 <?php
 
 require('./dbconnection.php');
+require('./functions.php');
 
-// Populating Dropdown
-$sqlRet = 'SELECT `id`, `p_title` FROM `projects`';
-$stmtRet = $db->query($sqlRet);
-$stmtRet->execute();
-$projects = $stmtRet->fetchAll();
+if ($_GET['error'] == '01') {
+    $error = 'All fields must be filled.';
+}
 
 ?>
 
@@ -27,12 +26,13 @@ $projects = $stmtRet->fetchAll();
 </head>
 <body>
     <main class="container select-page">
+        <h3 class="error"><?php echo $error; ?></h3>
         <form class="project-selection" action="edit.php" method="GET">
             <label for="dropdown">Choose Project to Edit: </label>
             <select name="dropdown" id="id">
-                <option value="0">PROJECTS</option>
+                <option selected>PROJECTS</option>
                 <?php
-                foreach($projects as $project) { ?>
+                foreach(fetchProjects($db) as $project) { ?>
                     <option value="<?php echo $project['id'] ?>"><?php echo $project['p_title'] ?></option>
                 <?php } ?>
             </select>

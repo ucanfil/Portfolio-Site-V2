@@ -2,28 +2,24 @@
 
 require('./dbconnection.php');
 
-if (isset($_POST['content'])) {
-    $content = $_POST['content'];
-    $id = 1;
-
-    if (empty($_POST['content'])) {
+if (empty($_POST['content'])) {
         $error = 'All fields must be filled out !';
     } else {
+        $content = $_POST['content'];
+        $id = 1;
         // Editing the database
-        $sqlEdit = 'REPLACE INTO `about_me` (`id`, `content`) VALUES (:id, :content)';
+        $sqlEdit = 'UPDATE `about_me` SET `content` = :content WHERE `id` = :id';
         $stmtEdit = $db->prepare($sqlEdit);
         $stmtEdit->bindParam(':id', $id);
         $stmtEdit->bindParam(':content', $content);
 
         if ($stmtEdit->execute()) {
-            header('Location: ./admin.php');
+            header('Location: ./admin.php?success=01');
             exit();
         } else {
             echo 'Something went wrong !';
         }
     }
-}
-
 
 ?>
 
