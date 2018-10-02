@@ -1,11 +1,13 @@
 <?php
 
-require('./dbconnection.php');
-require('./functions.php');
+require('dbconnection.php');
+require('functions.php');
 
 if ($_GET['error'] == '01') {
     $error = 'All fields must be filled.';
 }
+
+$projects = fetchProjects($db);
 
 ?>
 
@@ -31,10 +33,7 @@ if ($_GET['error'] == '01') {
             <label for="dropdown">Choose Project to Edit: </label>
             <select name="dropdown" id="id">
                 <option selected>PROJECTS</option>
-                <?php
-                foreach(fetchProjects($db) as $project) { ?>
-                    <option value="<?php echo $project['id'] ?>"><?php echo $project['p_title'] ?></option>
-                <?php } ?>
+                <?php echo populateDropdown($projects); ?>
             </select>
             <input class="select-button" type="submit" value="Select">
         </form>

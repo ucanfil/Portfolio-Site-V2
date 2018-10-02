@@ -1,10 +1,10 @@
 <?php
 
-require('./dbconnection.php');
+require('dbconnection.php');
 
 
 if (empty($_POST['p_title']) || empty($_POST['p_content']) || empty($_POST['code_url']) || empty($_POST['deployed_url']) || empty($_POST['image_url'])) {
-    header('Location: ./select.php?error=01');
+    header('Location: select.php?error=01');
 } else {
     $p_title = $_POST['p_title'];
     $p_content = $_POST['p_content'];
@@ -25,10 +25,10 @@ if (empty($_POST['p_title']) || empty($_POST['p_content']) || empty($_POST['code
     $stmtEdit->bindParam(':bg_image_url', $bg_image_url);
 
     if ($stmtEdit->execute()) {
-        header('Location: ./admin.php?success=01');
+        header('Location: admin.php?success=01');
         exit();
     } else {
-        echo $id, $p_title . ' Something went wrong !';
+        echo 'Something went wrong !';
     }
 }
 ?>

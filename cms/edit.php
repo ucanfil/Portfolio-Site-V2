@@ -1,16 +1,16 @@
 <?php
 
-require('./dbconnection.php');
+require('dbconnection.php');
 
-    if (isset($_GET['dropdown'])) {
-        // If any option selected get its id from the list and assign it to $id
-        $id = $_GET['dropdown'];
-        $sqlRetProject = 'SELECT * FROM `projects` WHERE `id`= :id';
-        $stmtRetProject = $db->prepare($sqlRetProject);
-        $stmtRetProject->bindParam(':id', $id);
-        $stmtRetProject->execute();
-        $project = $stmtRetProject->fetch();
-    }
+if (isset($_GET['dropdown'])) {
+    // If any option selected get its id from the list and assign it to $id
+    $id = $_GET['dropdown'];
+    $sqlRetProject = 'SELECT `p_title`, `p_content`, `code_url`, `see_url`, `bg_image_url` FROM `projects` WHERE `id`= :id';
+    $stmtRetProject = $db->prepare($sqlRetProject);
+    $stmtRetProject->bindParam(':id', $id);
+    $stmtRetProject->execute();
+    $project = $stmtRetProject->fetch();
+}
 ?>
 
 <!DOCTYPE html>

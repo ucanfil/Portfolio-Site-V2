@@ -3,6 +3,8 @@
 require('./dbconnection.php');
 require('./functions.php');
 
+$projects = fetchProjects($db);
+
 ?>
 
 
@@ -26,10 +28,7 @@ require('./functions.php');
             <label for="dropdown">Choose Project to Edit: </label>
             <select name="dropdown" id="id">
                 <option selected>PROJECTS</option>
-                <?php
-                foreach(fetchProjects($db) as $project) { ?>
-                    <option value="<?php echo $project['id'] ?>"><?php echo $project['p_title'] ?></option>
-                <?php } ?>
+                <?php echo populateDropdown($projects); ?>
             </select>
             <input class="delete-button" type="submit" value="Delete">
         </form>
