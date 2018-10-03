@@ -1,5 +1,6 @@
 <?php
-require('./cms/dbconnection.php');
+require('cms/dbconnection.php');
+require('cms/functions.php');
 
 $sql = 'SELECT `id`, `p_title`, `p_content`, `code_url`, `see_url`, `bg_image_url`
 FROM `projects` ORDER BY `id` DESC';
@@ -56,22 +57,7 @@ if ($stmt2->execute()) {
                 <div class="heading-detail">Some of My Work</div>
             </div>
             <ul class="projects">
-                <?php
-                foreach ($projects as $project) { ?>
-                    <li class="project project<?php echo $project['id']; ?>"
-                    style="background-image: url('<?php echo $project['bg_image_url']; ?>')">
-                        <div class="hidden-project-info">
-                            <h3><?php echo $project['p_title']; ?></h3>
-                            <p><?php echo $project['p_content']; ?></p>
-                            <div class="code-nav-buttons">
-                                <a href="<?php echo $project['code_url']; ?>" target="_blank">CODE</a>
-                                <a href="<?php echo $project['see_url']; ?>" target="_blank">SEE ?</a>
-                            </div>
-                        </div>
-                    </li>
-                <?php
-                }
-                ?>
+                <?php echo populateProject($projects); ?>
             </ul>
         </section>
         <section class="about-me">
