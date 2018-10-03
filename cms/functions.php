@@ -1,15 +1,31 @@
 <?php
 require('dbconnection.php');
 
-// Populating Dropdown
-function fetchProjects($db) {
+/**
+ * Fetches data from database
+ *
+ * Sends a query to database, executes, fetches all data.
+ *
+ * @param PDO $db
+ * @return array which consist of field values of project's table
+ */
+function fetchProjects(PDO $db) : array {
     $sql = 'SELECT `id`, `p_title` FROM `projects`';
     $stmt = $db->query($sql);
     $stmt->execute();
     return $stmt->fetchAll();
 }
 
-function addProject($db) {
+/**
+ * Adds new project to database
+ *
+ * Assigns global POST variables to variables, sends an insert query to database,
+ * If execute is successful redirects user to admin page with a success message.
+ *
+ * @param PDO $db
+ * @return void
+ */
+function addProject(PDO $db) {
     $p_title = $_POST['p_title'];
     $p_content = $_POST['p_content'];
     $code_url = $_POST['code_url'];
@@ -32,7 +48,16 @@ function addProject($db) {
     }
 }
 
-function populateDropdown($projects) {
+/**
+ * Populates option elements
+ *
+ * Takes an array which is fetched data from database, as an argument, loops over them,
+ * populates option elements with values from the array.
+ *
+ * @param array $projects
+ * @return string
+ */
+function populateDropdown(array $projects) : string {
     $html = '';
     foreach ($projects as $project) {
         $html .= '<option value="' . $project['id'] . '">' . $project['p_title'] . '</option>';
@@ -40,7 +65,16 @@ function populateDropdown($projects) {
     return $html;
 }
 
-function populateProject($projects) {
+/**
+ * Populates list elements
+ *
+ * Takes an array which is fetched data from database, as an argument, loops over them,
+ * populates list elements with values from the array.
+ *
+ * @param array $projects
+ * @return string
+ */
+function populateProject(array $projects) : string {
     $html = '';
     foreach ($projects as $project) {
         $html .= '<li class="project project' . $project['id'] . '"
