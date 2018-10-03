@@ -2,6 +2,7 @@
 
 require('dbconnection.php');
 require('functions.php');
+require('htmlCreationFunctions.php');
 
 if ($_GET['error'] == '01') {
     $error = 'All fields must be filled.';

@@ -1,6 +1,6 @@
 <?php
 require('cms/dbconnection.php');
-require('cms/functions.php');
+require('cms/htmlCreationFunctions.php');
 
 $sql = 'SELECT `id`, `p_title`, `p_content`, `code_url`, `see_url`, `bg_image_url`
 FROM `projects` ORDER BY `id` DESC';

@@ -2,6 +2,7 @@
 
 require('./dbconnection.php');
 require('./functions.php');
+require('./htmlCreationFunctions.php');
 
 $projects = fetchProjects($db);
 
