@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.41)
 # Database: cms
-# Generation Time: 2018-10-01 12:30:30 +0000
+# Generation Time: 2018-10-03 14:02:09 +0000
 # ************************************************************
 
 
@@ -36,7 +36,7 @@ LOCK TABLES `about_me` WRITE;
 
 INSERT INTO `about_me` (`id`, `content`)
 VALUES
-	(1,'Former civil engineer, who recently took big steps towards to become a software developer. In last november received a scholarship from Udacity/Google Front-End Development, selected among 200.000 students, in february 2018, got accepted 2nd phase of the scholarship by reaching top 10% of 20.000 students.');
+	(1,'Former civil engineer, who recently took big steps towards to become a software developer. In last november received a scholarship from Udacity/Google Front-End Development, selected among 200.000 students, in february 2018, got accepted 2nd phase of the scholarship by reaching top 10% of 20.000 students. ');
 
 /*!40000 ALTER TABLE `about_me` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -62,14 +62,14 @@ LOCK TABLES `projects` WRITE;
 
 INSERT INTO `projects` (`id`, `p_title`, `p_content`, `code_url`, `see_url`, `bg_image_url`)
 VALUES
-	(1,'To-Do App','You can easily add a new to-do, hover and click trash-icon to delete an existing to-do, click on an existing to-do to strike-through effect','https://github.com/ucanfil/Todo-App','https://ucanfil.github.io/Todo-App/','../img/todo-medium_600.png'),
-	(2,'Portfolio Website','Full responsive portfolio site build with pure vanilla javascript, css3, flexbox','https://github.com/ucanfil/Portfolio-Site','https://ucanfil.github.io/Portfolio-Site/','../img/portfolio-medium_600.png'),
-	(3,'Color Game','Built with vanilla javaScript, based on RGB code given randomly, you try to guess the correct color, there are two difficulty level options','https://github.com/ucanfil/Color-Game','https://ucanfil.github.io/Color-Game/','../img/colorgame-medium_600.png'),
-	(4,'Cat Clicker App','This project is made using MVC (MV*) design pattern for scaling purposes in the future. Styling was not number one priority.','https://github.com/ucanfil/Cat-Clicker','https://ucanfil.github.io/Cat-Clicker/','../img/catclicker-medium_600.png'),
-	(5,'Memory Game','Built with vanilla javaScript, This is a game which players test their memory. Players pick cards from deck of 16 cards, and try to pair them.','https://github.com/ucanfil/Memory-Game','https://ucanfil.github.io/Memory-Game/','../img/matchinggame-medium_600.png'),
-	(6,'Frogger Game','Project is made as part of Front-End Nanodegree by Udacity, in order to practice object-oriented programming concepts.','https://github.com/ucanfil/Arcade-Game','https://ucanfil.github.io/Arcade-Game/','../img/froggergame-medium_600.png'),
-	(7,'My Reads','','https://github.com/ucanfil/MyReads',NULL,''),
-	(8,'Eat\'nDrink','','https://github.com/ucanfil/dineobath','https://ucanfil.github.io/dineobath/','');
+	(1,'To-Do App','You can easily add a new to-do, hover and click trash-icon to delete an existing to-do, click on an existing to-do to strike-through effect','https://github.com/ucanfil/Todo-App','https://ucanfil.github.io/Todo-App/','./img/todo-medium_600.png'),
+	(2,'Portfolio Website','Full responsive portfolio site build with pure vanilla javascript, css3, flexbox','https://github.com/ucanfil/Portfolio-Site','https://ucanfil.github.io/Portfolio-Site/','./img/portfolio-medium_600.png'),
+	(3,'Color Game','Built with vanilla javaScript, based on RGB code given randomly, you try to guess the correct color, there are two difficulty level options','https://github.com/ucanfil/Color-Game','https://ucanfil.github.io/Color-Game/','./img/colorgame-medium_600.png'),
+	(4,'Cat Clicker App','This project is made using MVC (MV*) design pattern for scaling purposes in the future. Styling was not number one priority.','https://github.com/ucanfil/Cat-Clicker','https://ucanfil.github.io/Cat-Clicker/','./img/catclicker-medium_600.png'),
+	(5,'Memory Game','Built with vanilla javaScript, This is a game which players test their memory. Players pick cards from deck of 16 cards, and try to pair them.','https://github.com/ucanfil/Memory-Game','https://ucanfil.github.io/Memory-Game/','./img/matchinggame-medium_600.png'),
+	(6,'Frogger Game','Project is made as part of Front-End Nanodegree by Udacity, in order to practice object-oriented programming concepts.','https://github.com/ucanfil/Arcade-Game','https://ucanfil.github.io/Arcade-Game/','./img/froggergame-medium_600.png'),
+	(7,'My Reads','A book categorizing app, shows a control that allows users to move books between shelves. Also has a search functionality that you can search and categorize books directly from search results.','https://github.com/ucanfil/MyReads','#','./img/myreads-medium_600.png'),
+	(8,'Eat\'nDrink','This application built with React, using Google Maps API and foursquare API to find cafes in the city of Bath, UK.','https://github.com/ucanfil/dineobath','https://ucanfil.github.io/dineobath/','./img/eatndrink-medium_600.png');
 
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
