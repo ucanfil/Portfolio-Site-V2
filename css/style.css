@@ -171,7 +171,8 @@ h1 {
 html[data-useragent*='MSIE 10.0'] h1 {
   color: #00c9d3;
   background-image: none;
-  animation: none;
+  -webkit-animation: none;
+          animation: none;
 }
 
 @-webkit-keyframes glow {
@@ -254,10 +255,15 @@ html[data-useragent*='MSIE 10.0'] h1 {
 
 .projects:after {
   content: '';
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
-  justify-content: space-around;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .project {
