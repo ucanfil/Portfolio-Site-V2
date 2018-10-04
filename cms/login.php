@@ -5,18 +5,22 @@ if ($_SESSION['logged_in']) {
     header('Location: admin.php');
     exit();
 } else {
-    if (empty($_POST['username']) || empty($_POST['password'])) {
-        $error = 'All fields must be filled out !';
+    if (!isset($_POST['username']) && !isset($_POST['password'])) {
+        $error = '';
     } else {
-        $usernameDb = 'mayden';
-        $hashDb = '$2a$10$ndonmD1PbrfaN1GzBOpBEOvCcs5/3LcV0oxduawaAFdRKthU0NJB2';
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        if (password_verify($password, $hashDb)) {
-            $_SESSION['logged_in'] = true;
-            header('Location: admin.php?success=02');
+        if (empty($_POST['username']) || empty($_POST['password'])) {
+            $error = 'All fields must be filled out';
         } else {
-            $error = 'Username or password is incorrect';
+            $usernameDb = 'mayden';
+            $hashDb = '$2a$10$ndonmD1PbrfaN1GzBOpBEOvCcs5/3LcV0oxduawaAFdRKthU0NJB2';
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            if (password_verify($password, $hashDb)) {
+                $_SESSION['logged_in'] = true;
+                header('Location: admin.php?success=02');
+            } else {
+                $error = 'Username or password is incorrect';
+            }
         }
     }
 }

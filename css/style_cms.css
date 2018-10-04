@@ -113,6 +113,14 @@ a:hover {
   background-color: #9c1e1e;
 }
 
+.logout-button {
+  background-color: #9c1e1e;
+  margin-top: 40px;
+  flex: 0 0 auto;
+  border: none;
+  padding: 5px 10px;
+}
+
 /* ======= Add/Edit Page Styling ======= */
 .add-page,
 .edit-page,{
