@@ -115,7 +115,7 @@ a:hover {
 
 /* ======= Add/Edit Page Styling ======= */
 .add-page,
-.edit-page {
+.edit-page,{
   width: 750px;
 }
 
@@ -216,4 +216,8 @@ form {
 
 .success::first-letter {
   text-transform: uppercase;
+}
+/* ======= Login Page Styling ======= */
+.login-page {
+  width: 500px;
 }

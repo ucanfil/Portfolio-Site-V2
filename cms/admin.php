@@ -2,6 +2,8 @@
 
 if ($_GET['success'] == '01') {
     $success = 'Process successful.';
+} elseif ($_GET['success'] == '02') {
+    $success = 'Login successful.';
 }
 
 ?>
