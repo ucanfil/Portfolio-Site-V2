@@ -2,7 +2,10 @@
 
 require('dbconnection.php');
 
-if (isset($_GET['dropdown'])) {
+if (array_key_exists('dropdown', $_GET) && $_GET['dropdown'] == 'PROJECTS') {
+    header('Location: select.php?error=02');
+    exit();
+} elseif (array_key_exists('dropdown', $_GET)) {
     // If any option selected get its id from the list and assign it to $id
     $id = $_GET['dropdown'];
     $sqlRetProject = 'SELECT `p_title`, `p_content`, `code_url`, `see_url`, `bg_image_url` FROM `projects` WHERE `id`= :id';

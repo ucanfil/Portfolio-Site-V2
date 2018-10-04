@@ -1,8 +1,8 @@
 <?php
 
-require('./dbconnection.php');
-require('./functions.php');
-require('./htmlCreationFunctions.php');
+require('dbconnection.php');
+require('functions.php');
+require('nonDbFunctions.php');
 
 $projects = fetchProjects($db);
 

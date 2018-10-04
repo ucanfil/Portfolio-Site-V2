@@ -1,6 +1,6 @@
 <?php
 
-require('../cms/htmlCreationFunctions.php');
+require('../cms/nonDbFunctions.php');
 
 use PHPUnit\Framework\TestCase;
 
@@ -19,6 +19,13 @@ class Cms extends TestCase {
         $this->assertContains('</li>', $html);
         $this->assertContains('</h3>', $html);
     }
+
+    public function testOKisKeyExist() {
+        $keys = ['hello', 'world'];
+        $array = ['world' => 1, 'hello' => 0];
+        $this->assertEquals(true, isKeyExist($keys, $array));
+    }
+
     // Failure Tests
     public function testFailurepopulateDropdown() {
         $projects = [[1, 4]];
@@ -32,6 +39,13 @@ class Cms extends TestCase {
         $this->assertContains('</li>', $html);
         $this->assertContains('</h3>', $html);
     }
+
+    public function testFailureisKeyExist() {
+        $keys = ['hello', 'world', 'whats up'];
+        $array = ['world' => 1, 'hello' => 0];
+        $this->assertEquals(false, isKeyExist($keys, $array));
+    }
+
     // Malformed Tests
     public function testMalformedpopulateDropdown() {
         $projects = '';

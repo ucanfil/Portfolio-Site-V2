@@ -3,23 +3,21 @@
 require('dbconnection.php');
 
 if (empty($_POST['content'])) {
-        $error = 'All fields must be filled out !';
-    } else {
-        $content = $_POST['content'];
-        $id = 1;
-        // Editing the database
-        $sqlEdit = 'UPDATE `about_me` SET `content` = :content WHERE `id` = :id';
-        $stmtEdit = $db->prepare($sqlEdit);
-        $stmtEdit->bindParam(':id', $id);
-        $stmtEdit->bindParam(':content', $content);
+    $error = 'All fields must be filled out !';
+} elseif (array_key_exists('content', $_POST)) {
+    $content = $_POST['content'];
+    // Editing the database
+    $sqlEdit = 'UPDATE `about_me` SET `content` = :content WHERE `id` = 1';
+    $stmtEdit = $db->prepare($sqlEdit);
+    $stmtEdit->bindParam(':content', $content);
 
-        if ($stmtEdit->execute()) {
-            header('Location: admin.php?success=01');
-            exit();
-        } else {
-            echo 'Something went wrong !';
-        }
+    if ($stmtEdit->execute()) {
+        header('Location: admin.php?success=01');
+        exit();
+    } else {
+        echo 'Something went wrong !';
     }
+}
 
 ?>
 

@@ -47,4 +47,5 @@ function addProject(PDO $db) {
         echo 'Something went wrong !';
     }
 }
+
 ?>

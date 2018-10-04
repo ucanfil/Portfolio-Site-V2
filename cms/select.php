@@ -2,10 +2,14 @@
 
 require('dbconnection.php');
 require('functions.php');
-require('htmlCreationFunctions.php');
+require('nonDbFunctions.php');
 
 if ($_GET['error'] == '01') {
     $error = 'All fields must be filled.';
+} elseif ($_GET['error'] == '02') {
+    $error = 'Please select a project from the list.';
+} else {
+    unset($error);
 }
 
 $projects = fetchProjects($db);
@@ -29,7 +33,9 @@ $projects = fetchProjects($db);
 </head>
 <body>
     <main class="container select-page">
-        <h3 class="error"><?php echo $error; ?></h3>
+        <h3 class="error"><?php if (isset($error)) {
+            echo $error;
+        } ?></h3>
         <form class="project-selection" action="edit.php" method="GET">
             <label for="dropdown">Choose Project to Edit: </label>
             <select name="dropdown" id="id">
