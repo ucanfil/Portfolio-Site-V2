@@ -1,0 +1,219 @@
+/* ======= Admin Page Styles For the CMS Section ====== */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  background-color: #000021;
+  color: #fff;
+}
+
+.container {
+  margin: 20% auto;
+  width: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.admin-page {
+  text-transform: uppercase;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.project-nav {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+}
+
+a {
+  flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  padding: 3px 5px;
+  border: 1px solid transparent;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000021;
+}
+
+a:hover {
+  color: #000021;
+  -webkit-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+.about-me-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 50px;
+  width: 450px;
+  background-color: #838383;
+}
+
+.edit-about-me {
+  line-height: 100%;
+}
+
+.add {
+  background-color: aquamarine;
+}
+
+.edit {
+  background-color: aqua;
+}
+
+.delete {
+  background-color: #9c1e1e;
+}
+
+/* ======= Add/Edit Page Styling ======= */
+.add-page,
+.edit-page {
+  width: 750px;
+}
+
+.project-content-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+form {
+  width: 100%;
+}
+
+.project-content-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.project-content-list li label {
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -ms-flex-preferred-size: 200px;
+  flex-basis: 200px;
+}
+
+.project-content-list li input,
+.project-content-list li textarea {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -ms-flex-preferred-size: 200px;
+  flex-basis: 200px;
+}
+
+.project-content-list li textarea {
+  height: 150px;
+}
+
+.submit-button {
+  float: right;
+  margin-top: 20px;
+}
+
+/* ======= Select Page Styling ======= */
+.project-selection {
+  width: 100%;
+  height: 100px;
+}
+
+.project-selection select {
+  float: right;
+}
+
+.select-button {
+  background-color: #7fffd486;
+  margin-top: 20px;
+  float: right;
+  border: none;
+  padding: 5px 10px;
+}
+
+/* ======= Edit Page Styling ======= */
+.edit-page {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+/* ======= Delete Page Styling ======= */
+.delete-button {
+  background-color: #9c1e1e;
+  color: #fff;
+  margin-top: 20px;
+  float: right;
+  border: none;
+  padding: 5px 10px;
+}
+
+/* ======= Error/Success Messages ======= */
+.error {
+  color: #9c1e1e;
+}
+
+.success {
+  color: #208f45;
+  text-transform: lowercase;
+}
+
+.success::first-letter {
+  text-transform: uppercase;
+}
