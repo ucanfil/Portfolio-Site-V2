@@ -1,7 +1,16 @@
 <?php
+session_start();
+if (!$_SESSION['logged_in']) {
+    header('Location: login.php');
+    exit();
+}
+
+
 
 if ($_GET['success'] == '01') {
     $success = 'Process successful.';
+} elseif ($_GET['success'] == '02') {
+    $success = 'Login successful.';
 }
 
 ?>
@@ -31,6 +40,7 @@ if ($_GET['success'] == '01') {
         <div class="about-me-container">
             <a class="edit-about-me" href="editAboutMe.php">Edit About Me</a>
         </div>
+        <a class="logout-button" href="logout.php">Logout</a>
     </main>
 </body>
 </html>
