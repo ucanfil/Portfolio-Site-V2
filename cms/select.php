@@ -9,9 +9,9 @@ require('dbconnection.php');
 require('functions.php');
 require('nonDbFunctions.php');
 
-if ($_GET['error'] == '01') {
+if (isset($_GET['error']) && $_GET['error'] == '01') {
     $error = 'All fields must be filled.';
-} elseif ($_GET['error'] == '02') {
+} elseif (isset($_GET['error']) && $_GET['error'] == '02') {
     $error = 'Please select a project from the list.';
 } else {
     unset($error);

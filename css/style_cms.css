@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-  margin: 20% auto;
+  margin: 10% auto;
   width: 450px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -123,7 +123,7 @@ a:hover {
 
 /* ======= Add/Edit Page Styling ======= */
 .add-page,
-.edit-page,{
+.edit-page {
   width: 750px;
 }
 
@@ -164,8 +164,8 @@ form {
   flex-grow: 1;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  -ms-flex-preferred-size: 200px;
-  flex-basis: 200px;
+  -ms-flex-preferred-size: 400px;
+  flex-basis: 400px;
 }
 
 .project-content-list li textarea {
@@ -227,5 +227,6 @@ form {
 }
 /* ======= Login Page Styling ======= */
 .login-page {
-  width: 500px;
+  width: 650px;
+  margin-top: 20%;
 }
