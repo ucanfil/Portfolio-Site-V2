@@ -277,7 +277,6 @@ html[data-useragent*='MSIE 10.0'] h1 {
   max-width: 33.3%;
   width: 100%;
   min-height: 300px;
-  min-width: 300px;
 }
 
 .project a {
@@ -406,6 +405,12 @@ footer {
     -ms-flex-align: center;
     align-items: center;
   }
+
+  .project {
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
 }
 
 @media only screen and (max-width: 650px) {
@@ -421,6 +426,12 @@ footer {
 
   .heading-detail {
     top: 32.5%;
+  }
+
+  .project {
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 
